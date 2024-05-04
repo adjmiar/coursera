@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="UTF -8">
+  <title> Adjmia's Calculator </title>
+  
+</head>
+<body>
+ 
+<div id="calcul">
+  <input id="display" readonly>
+  <div >
+   <button  class="two-button "; onclick="updateCalculation('+')";
+  >+</button>
+
+  <button class="one-button "; onclick="updateCalculation('1')">1</button>
+
+  <button class="one-button " ; onclick="updateCalculation('2')">2</button>
+
+  <button class="one-button " ; onclick="updateCalculation('3')">3</button>
+
+<p>
+  <button class="two-button "; onclick="updateCalculation('-')">-</button>
+
+  <button class="one-button " ; onclick="updateCalculation('4')">4</button>
+
+  <button class="one-button "; onclick="updateCalculation('5')">5</button>
+
+  <button class="one-button "; onclick="updateCalculation('6')">6</button>
+</p>
+
+
+<p>
+  <button class="two-button "; onclick="updateCalculation('*')">*</button>
+  
+  <button class="one-button " ; onclick="updateCalculation('7')">7</button>
+
+<button class="one-button " ; onclick="updateCalculation('8')">8</button>
+
+
+<button class="one-button " ; onclick="updateCalculation('9')">9</button>
+</p>
+
+<p>
+  <button class="two-button "; onclick="updateCalculation('/')">/</button>
+  
+  <button class="one-button " ; onclick="updateCalculation('0')">0</button>
+
+  <button class="one-button "; onclick="updateCalculation('.')">.</button>
+
+
+  <button class="one-button "; onclick="calculate()">=
+</button>
+
+<p>
+  <button class="two-button "; onclick="clear()";
+  >C</button>
+</p>
+</div>
+</div> 
+
+
+
+<style>
+body{
+  margin:0;
+  display:flex;
+  justify-content: center;
+  align-items:center;
+  background-color: rgb(130, 36, 69);
+  
+}
+#calcul{
+  background-color: black;
+  border-radius: 15px;
+  max-width:370px;
+  margin:2cm;
+  overflow: hidden;/*si lequation est trop longue ratkhba*/
+}
+#display{
+  width: 100%;
+  padding:20px;
+  font-size: 3rem;
+  text-align: left;
+  border: none;
+  background-color:black;
+  color:white;
+}
+
+.two-button{
+  background-color: rgb(159, 36, 136);
+  color: white;
+border: none;
+height: 70px;
+width: 70px;
+border-radius: 100%;
+border-bottom: 100%;
+cursor: pointer;
+margin-right:8px;
+margin-left:20px;
+font-size: 35px;
+font-family: Arial, Helvetica, sans-serif ;
+font-weight: bolder;
+}
+
+.one-button{
+  background-color:rgb(255, 12, 142);
+color: white;
+border: none;
+height: 70px;
+width: 70px;
+border-radius: 100%;
+border-bottom: 100%;
+font-weight: bolder; 
+cursor: pointer;/*pour changer la forme dyal curseur*/
+margin-right:8px;
+font-size: 35px;
+font-family: Arial, Helvetica, sans-serif ;
+
+}
+
+.one-button:hover{
+  background-color:rgb(242, 89, 171);
+}/*pour quand on met cursor sur un boutton on change couleur*/
+
+.one-button:active{
+  background-color:rgb(32, 195, 140) ;
+}/*pour quand on clique  sur un boutton on change couleur*/
+.two-button:hover{
+  background-color: rgb(237, 154, 222);
+}
+.two-button:active{
+  background-color:rgb(32, 195, 140) ;
+}
+</style>
+
+</body>
+
+<script>
+
+  const display=document.getElementById("display");
+  
+function updateCalculation(input){
+ display.value+=input;}
+
+function clear(){
+display.value ="";
+}
+function calculate(){
+try{
+  display.value= eval(display.value);
+}
+catch(error){
+  display.value="Error";
+}
+}
+  
+
+</script>
+
+</html>
